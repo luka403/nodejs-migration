@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:categories": "npx ts-node src/migrations/migrateCategories.ts",
+    "migrate:vendors": "npx ts-node src/migrations/migrateVendors.ts",
+    "migrate:products": "npx ts-node src/migrations/migrateProducts.ts",
+    "migrate:all": "npm run migrate:categories && npm run migrate:vendors && npm run migrate:products",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "migrate": "npx ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^24.0.3",
+    "chalk": "^4.1.2",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.5.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.15.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "description": "CSV to MongoDB Data Migration"
+}
